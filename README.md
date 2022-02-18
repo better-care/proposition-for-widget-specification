@@ -18,7 +18,7 @@ Every widget has potentially 2 inputs, 2 outputs and schema specification. Input
 
 Schematically this would look like this:
 
-![Widget schema](marketplace/widgets/images/widget_schema.png)
+![Widget schema](assets/widget_schema.png)
 
 This means we have 4 different options on how the widget interacts with environment and one schema property:
 
@@ -43,7 +43,7 @@ For angular component this is how it looks like in a web component:
 ```
 
 And this is an example of a configuration for a slider shown in Studio.
-![Slider configuration](marketplace/widgets/images/slider_configuration.png)
+![Slider configuration](assets/slider_configuration.png)
 
 The configuration is not mandatory if the widget doesn't need it.
 
@@ -115,7 +115,7 @@ descriptor = {
 ```
 
 This is how this descriptor would then look like in Studio:
-![Pie chart sample](marketplace/widgets/images/pie_chart_sample.png)
+![Pie chart sample](assets/pie_chart_sample.png)
 
 
 descriptor can have two root properties:
@@ -139,7 +139,7 @@ Let's look at chart type configuration:
   }
 ```
 This corresponds to Widget configuration Chart Type:
-![Chart type config](marketplace/widgets/images/chart_type_config.png)
+![Chart type config](assets/chart_type_config.png)
 
 There are 4 properties in chartType object:
 
@@ -153,7 +153,7 @@ This describes what type of property is accepted.  There are six possible types:
 
 if the type is `enum` then you can also define what are the possible options to pick from. In configuration this looks like dropdown from where you can select values:
 
-![dropdown](marketplace/widgets/images/dropdown.png)
+![dropdown](assets/dropdown.png)
 
 ### _defaultValue_
 primitives can also have a default value. When the widget is added initially on the canvas this value will already be preselected (and can be then be changed by the user)
