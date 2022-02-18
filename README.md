@@ -1,12 +1,12 @@
-# Creating widgets
+# Creating widgets 
 
 When creating a widget it depends on which framework you want to create it in.
 
 We already offer some templates depending on the framework you are using.
 
-- Angular template: https://github.com/better-care/angular-widget-template
-- Svelte template: https://github.com/better-care/svelte-widget-template
-- React template: https://github.com/better-care/react-widget-template
+ - Angular template: https://github.com/better-care/angular-widget-template
+ - Svelte template: https://github.com/better-care/svelte-widget-template
+ - React template: https://github.com/better-care/react-widget-template
 
 All inputs confirm to the same schema description.
 
@@ -14,25 +14,27 @@ The end "widget" is a web component that can then be installed in the marketplac
 
 To get the credentials for marketplace and to upload the widget please contact us on tools@better.care
 
-Every widget has potentially 2 inputs, 2 outputs and schema specification. Inputs, outputs and description are provided in this page as they are the same for any framework.
+Every widget has potentially 2 inputs, 2 outputs and schema specification. Inputs, outputs and description are provided in this page as they are the same for any framework. 
 
 Schematically this would look like this:
 
-![Widget schema](assets/widget_schema.png)
+![Widget schema](marketplace/widgets/images/widget_schema.png)
 
 This means we have 4 different options on how the widget interacts with environment and one schema property:
 
-- Input widget configuration
-- Input widget data
-- Output widget data
-- Output widget action (still in beta - coming in 3.3)
-- Schema (denotes how inputs and outputs should behave)
-
+ - Input widget configuration
+ - Input widget data
+ - Output widget data
+ - Output widget action (still in beta - coming in 3.3)
+ - Schema (denotes how inputs and outputs should behave)
+ 
 These are the specifics how to create widget and how to make it interact with environment. Explanations and examples of these interactions will be made in Angular way, but they are not dependent on the framework and can be done in other frameworks:
 
 ## Input widget configuration
 
-Widgets behaviour can be configured through input widget configuration.  The configuration that is set it sit static to the specific widget on the canvas and cannot be changed during runtime.
+Widgets behaviour can be configured through input widget configuration.  
+Configuration that you provide to the specific widget on the canvas is not dynamic and cannot be changed during runtime of the widget.
+
 
 For angular component this is how it looks like in a web component:
 ```javascript
@@ -41,9 +43,9 @@ For angular component this is how it looks like in a web component:
 ```
 
 And this is an example of a configuration for a slider shown in Studio.
-![Slider configuration](assets/slider_configuration.png)
+![Slider configuration](marketplace/widgets/images/slider_configuration.png)
 
-The configuration is not mandatory if the widget doesn't have it.
+The configuration is not mandatory if the widget doesn't need it.
 
 ## Input widget data
 
@@ -52,10 +54,10 @@ The dynamic data that the widget shows is passed through the inputData property:
     @Input()
     inputData: any;
 ```
-You can connect widget to different resources through this property.
+You can connect widget to different resources through this property. 
 
 ## Output widget data
-If the widget is not a read only widget (slider is a good example)  and also is abe to change the data then the widget also needs to have an output emitter:
+If the widget is not a read only widget (slider is a good example)  and also is abe to change the data then the widget also needs to have an output emitter: 
 
 ```javascript    
     @Output()
@@ -113,12 +115,12 @@ descriptor = {
 ```
 
 This is how this descriptor would then look like in Studio:
-![Pie chart sample](assets/pie_chart_sample.png)
+![Pie chart sample](marketplace/widgets/images/pie_chart_sample.png)
 
 
 descriptor can have two root properties:
-- valueModel that defines the schema for `@Input() inputData`
-- configuration that defines the schema for `@Input() config`
+  - valueModel that defines the schema for `@Input() inputData`
+  - configuration that defines the schema for `@Input() config`
 
 There is no configuration for output schema because it must have the same schema as valueModel - the valueModel that defines the widget
 
@@ -137,7 +139,7 @@ Let's look at chart type configuration:
   }
 ```
 This corresponds to Widget configuration Chart Type:
-![Chart type config](assets/chart_type_config.png)
+![Chart type config](marketplace/widgets/images/chart_type_config.png)
 
 There are 4 properties in chartType object:
 
@@ -145,13 +147,13 @@ There are 4 properties in chartType object:
 
 This describes what type of property is accepted.  There are six possible types: `boolean`, `string`, `number`, `enum`, `object`, or `list`
 
-`boolean`, `string`, `number`, `enum` are primitives, while `object`, or `list` define another level in the configuration.
+`boolean`, `string`, `number`, `enum` are primitives, while `object`, or `list` define another level in the configuration. 
 
 ### _values_
 
 if the type is `enum` then you can also define what are the possible options to pick from. In configuration this looks like dropdown from where you can select values:
 
-![dropdown](assets/dropdown.png)
+![dropdown](marketplace/widgets/images/dropdown.png)
 
 ### _defaultValue_
 primitives can also have a default value. When the widget is added initially on the canvas this value will already be preselected (and can be then be changed by the user)
