@@ -1,0 +1,22 @@
+{
+  "name": "@bettercare/widget-typings",
+  "version": "1.0.0",
+  "description": "Spec for Studio widgets",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/better-care/proposition-for-widget-specification.git"
+  },
+  "author": "better.care",
+  "license": "ISC",
+  "types": "types.d.ts",
+  "bugs": {
+    "url": "https://github.com/better-care/proposition-for-widget-specification/issues"
+  },
+  "homepage": "https://github.com/better-care/proposition-for-widget-specification#readme",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
