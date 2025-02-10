@@ -1,9 +1,9 @@
 export interface WidgetModel {
   /* Data model of the widget */
-  inputData?: ValueModel;
+  inputData?: any;
 
   /* Configuration of the EHR Studio */
-  config?: Configuration;
+  config?: any;
 
   /* This is the representation of the widget data model which can be configured inside the Widget confiruator in
    * EHR Studio */
