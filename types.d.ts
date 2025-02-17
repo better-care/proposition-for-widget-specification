@@ -47,7 +47,8 @@ export type ValueModel = PrimitiveValueModel | ObjectValueModel | ListValueModel
 export type Configuration = {
   [key: string]: {
     type: ConfigurationType;
-    defaultValue: ConfigurationType;
+    defaultValue: unknown;
+    values?:  string[] | number[] | boolean[];
     metadata?: Metadata;
   };
 };
@@ -69,8 +70,8 @@ export type Metadata = {
 };
 
 export type WidgetDescriptor = {
-  valueModel: ValueModel;
-  configuration: Configuration;
+  valueModel?: ValueModel;
+  configuration?: Configuration;
   $conditions?: Condition[];
 };
 
